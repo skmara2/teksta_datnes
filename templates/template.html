@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Tests</title>
+ 
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <script src="static/jquery.js"></script>
+  <script src="static/jq.js"></script>
+  <div style=padding:100px>
+</head>
+<body background="https://static.turbosquid.com/Preview/2014/07/07__08_25_07/02.jpg1e54f649-ec8f-4f07-802d-589e6bc49397Original.jpg" style="backdrop-filter: brightness(120%)">
+ <header>
+    <div class="container"style="padding-bottom:60px">
+      <nav>
+      <h2><a href="{{ url_for('home') }}">Vai zini galvaspilsētas?</a></h2>
+      </nav>
+    </div>
+  </header> 
+<div id="izdruka"class="row justify-content-center" style="margin-top: 5px; font-size: 30px;"></div>
+  <div class="container">
+    
+    <h3>Šis tests ļauj pārliecināties, cik labi jūs zināt Eiropas valstu galvaspilsētas.  </h3><br>
+    
+     <br>
+    
+    
+  
+    <script>
+      var jjj;
+function jautajums(){
+   $.ajax({ url: '{{ url_for('garums') }}', success: function(garums) {
+    $("#skaiti").html("Testā ir "+garums+ " jautājumi.");
+    jjj="Testā ir "+garums+ " jautājumi.";
+    console.log(garums)
+    
+   }
+        });
+        
+  };
+
+
+  </script>  
+     
+  </div>
+  <div>
+    {% block content %}
+    <h4>Lai sāktu - nospiediet pogu "Sākt testu".</h4>
+  </div>
+   <div class="row justify-content-center">
+  <a href="{{ url_for('pogas') }}"><input 
+button class="col-md-auto btn btn-success btn-lg" style= "cursor:pointer" value="Sākt testu" /></a>   
+    {% endblock %}
+  </div>
+  
+
+</body>
