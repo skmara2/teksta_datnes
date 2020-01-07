@@ -20,7 +20,8 @@
       </div>
       <div id="redzet" class="row justify-content-center" style="color: #273746; font-size: 30px;"></div>
       
-      <script>
+     <script>
+        
   var p=0;
   var a;
   var g;
@@ -69,7 +70,8 @@ function parbaudit(){
 	
 function salidzinat(){
   g=document.getElementById("atbilde").value;
-    if (g==a)
+    
+    if (g.toUpperCase() === a.toUpperCase())
       {
       console.log(g+"="+a);
       document.getElementById("vertejums").value="Pareizi";

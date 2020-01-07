@@ -5,8 +5,9 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
-  <script src="static/jquery.js"></script>
+  
   <script src="static/jq.js"></script>
+  
   <div style=padding:100px>
 </head>
 <body background="https://static.turbosquid.com/Preview/2014/07/07__08_25_07/02.jpg1e54f649-ec8f-4f07-802d-589e6bc49397Original.jpg" style="backdrop-filter: brightness(120%)">
@@ -27,7 +28,7 @@
     
   
     <script>
-      var jjj;
+    var jjj;
 function jautajums(){
    $.ajax({ url: '{{ url_for('garums') }}', success: function(garums) {
     $("#skaiti").html("Testā ir "+garums+ " jautājumi.");
